@@ -1,6 +1,6 @@
 (ns patient-app.core
-    (:require [reagent.core :as r]
-              [reagent.dom :as rdom]))
+  (:require [reagent.core :as r]
+            [reagent.dom :as rdom]))
 
 (enable-console-print!)
 
@@ -8,7 +8,7 @@
 
 (defn kek
   []
-  [:p "hello world"])
+  [:p "Hello World!"])
 
 (rdom/render [kek] dom-root)
 

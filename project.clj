@@ -16,11 +16,13 @@
   :plugins [[lein-figwheel "0.5.20"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]
 
-  :source-paths ["src"]
+  :main patient-app.core
+
+  :source-paths ["src" "src-cljs"]
 
   :cljsbuild {:builds
               [{:id "dev"
-                :source-paths ["src"]
+                :source-paths ["src-cljs"]
 
                 :figwheel {:on-jsload "patient-app.core/on-js-reload"
                            :open-urls ["http://localhost:3449/index.html"]}
@@ -32,7 +34,7 @@
                            :source-map-timestamp true
                            :preloads [devtools.preload]}}
                {:id "min"
-                :source-paths ["src"]
+                :source-paths ["src-cljs"]
                 :compiler {:output-to "resources/public/js/compiled/patient_app.js"
                            :main patient-app.core
                            :optimizations :advanced
@@ -44,7 +46,7 @@
 
   :profiles {:dev {:dependencies [[binaryage/devtools "1.0.0"]
                                   [figwheel-sidecar "0.5.20"]]
-                   :source-paths ["src" "dev"]
+                   :source-paths ["src-cljs" "dev" "src"]
                    :clean-targets ^{:protect false} ["resources/public/js/compiled"
                                                      :target-path]}})
 
