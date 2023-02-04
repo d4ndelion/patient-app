@@ -1,11 +1,14 @@
 (ns patient-app.core
-    (:require ))
+    (:require [reagent.core :as r]
+              [reagent.dom :as rdom]))
 
 (enable-console-print!)
 
-(println "This text is printed from src/patient-app/core.cljs. Go ahead and edit it and see reloading in action.")
+(def dom-root (js/document.getElementById "app"))
 
-(defonce app-state (atom {:text "Hello world!"}))
+(defn kek
+  []
+  [:p "hello world"])
 
-(defn on-js-reload []
-)
+(rdom/render [kek] dom-root)
+
