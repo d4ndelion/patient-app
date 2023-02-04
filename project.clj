@@ -9,6 +9,12 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.773"]
                  [org.clojure/core.async  "0.4.500"]
+                 [compojure "1.7.0"]
+                 [http-kit "2.7.0-alpha1"]
+                 [ring/ring-defaults "0.3.4"]
+                 [org.clojure/data.json "2.4.0"]
+                 [org.clojure/java.jdbc "0.7.12"]
+                 [org.postgresql/postgresql "42.5.1"]
                  [reagent "1.1.1"]
                  [cljsjs/react "17.0.2-0"]
                  [cljsjs/react-dom "17.0.2-0"]]
@@ -24,8 +30,7 @@
               [{:id "dev"
                 :source-paths ["src-cljs"]
 
-                :figwheel {:on-jsload "patient-app.core/on-js-reload"
-                           :open-urls ["http://localhost:3449/index.html"]}
+                :figwheel {:open-urls ["http://localhost:3449/index.html"]}
 
                 :compiler {:main patient-app.core
                            :asset-path "js/compiled/out"
