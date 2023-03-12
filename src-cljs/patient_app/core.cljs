@@ -1,14 +1,10 @@
 (ns patient-app.core
-  (:require [reagent.core :as r]
-            [reagent.dom :as rdom]))
+  (:require [reagent.dom :as rdom]
+            [patient-app.ui.main-screen :as main-screen]))
 
 (enable-console-print!)
 
 (def dom-root (js/document.getElementById "app"))
 
-(defn kek
-  []
-  [:p "Hello World!"])
-
-(rdom/render [kek] dom-root)
+(rdom/render [main-screen/main-screen] dom-root)
 

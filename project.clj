@@ -17,7 +17,8 @@
                  [org.postgresql/postgresql "42.5.1"]
                  [reagent "1.1.1"]
                  [cljsjs/react "17.0.2-0"]
-                 [cljsjs/react-dom "17.0.2-0"]]
+                 [cljsjs/react-dom "17.0.2-0"]
+                 [cljs-http "0.1.46"]]
 
   :plugins [[lein-figwheel "0.5.20"]
             [lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]]

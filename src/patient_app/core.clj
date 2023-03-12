@@ -18,8 +18,10 @@
 
 (def app
   (-> app-routes
-      (wrap-cors :access-control-allow-origin [#".*"]
-                 :access-control-allow-methods [:get :put :post :delete :options])
+      (wrap-cors :access-control-allow-credentials "true"
+        :acess-control-allow-headers #{"accept" "accept-encoding" "accept-language" "content-type" "origin"} 
+        :access-control-allow-origin [#".*"]
+        :access-control-allow-methods [:get :put :post :delete :options])
       (wrap-defaults api-defaults)))
 
 (defn -main
