@@ -1,12 +1,12 @@
 (ns patient-app.ui.main-screen
-  (:require [patient-app.network.patient-api :refer [get-all-patients]]))
+  (:require [reagent.core :as r]
+            [patient-app.network.patient-api :refer [get-all-patients get-patient create-patient delete-patient update-patient]]))
 
 (defn patient-item
   [patient]
-  [:div patient])
+  [:h1 patient])
 
 (defn main-screen
   []
-  (let [patients (get-all-patients)]
-    (patient-item patients)))
+  (patient-item "Hello World!"))
 
